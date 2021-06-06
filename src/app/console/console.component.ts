@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-console',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./console.component.scss']
 })
 export class ConsoleComponent implements OnInit {
-
+  @Input() result = '';
   constructor() { }
 
   ngOnInit(): void {
