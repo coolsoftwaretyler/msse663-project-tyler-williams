@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { TextEditorComponent } from './text-editor/text-editor.component';
 import { ConsoleComponent } from './console/console.component';
 import { ReplComponent } from './repl/repl.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TextEditorComponent,
     ConsoleComponent,
-    ReplComponent
+    ReplComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
