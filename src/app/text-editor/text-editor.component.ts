@@ -26,18 +26,33 @@ export class TextEditorComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.mode === 'edit') {
+      const currentUrlDelimited = window.location.href.split('/')
+      const programId = currentUrlDelimited[currentUrlDelimited.length - 1]
+
+      this.programService.get(programId)
+      .subscribe(
+        response => {
+          // https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#non-null-assertion-operator
+          this.editorForm.controls.source.setValue(response.sourceCode);
+          this.evaluateProgram(response.sourceCode!);
+        },
+        error => {
+          console.error(error);
+        }
+      )
+
+    }
   }
 
   onSubmit(): void {
     const input = this.editorForm.controls.source.value;
-    const parsedInput = parse(input);
-    const interpretedInput = interpret(parsedInput, undefined);
-    this.newSourceEvent.emit(interpretedInput);
 
     if (this.mode === 'create') {
       this.createNewProgram(input);
     } else if (this.mode === 'edit') {
       this.editProgram(input);
+      this.evaluateProgram(input);
     } else {
       console.error('Invalid mode provided to text editor: ' + this.mode)
     }
@@ -72,5 +87,11 @@ export class TextEditorComponent implements OnInit {
         console.error(error);
       }
     )
+  }
+
+  evaluateProgram(input: String) {
+    const parsedInput = parse(input);
+    const interpretedInput = interpret(parsedInput, undefined);
+    this.newSourceEvent.emit(interpretedInput);
   }
 }
