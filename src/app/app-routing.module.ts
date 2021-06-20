@@ -6,7 +6,8 @@ import { ReplComponent } from './repl/repl.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'new', component: ReplComponent }
+  { path: 'programs/new', component: ReplComponent },
+  { path: 'programs/:id', component: ReplComponent}
 ];
 
 @NgModule({
