@@ -9,6 +9,8 @@ import { TextEditorComponent } from './text-editor/text-editor.component';
 import { ConsoleComponent } from './console/console.component';
 import { ReplComponent } from './repl/repl.component';
 import { HomeComponent } from './home/home.component';
+import { CreateProgramComponent } from './create-program/create-program.component';
+import { EditProgramComponent } from './edit-program/edit-program.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HomeComponent } from './home/home.component';
     TextEditorComponent,
     ConsoleComponent,
     ReplComponent,
-    HomeComponent
+    HomeComponent,
+    CreateProgramComponent,
+    EditProgramComponent
   ],
   imports: [
     BrowserModule,

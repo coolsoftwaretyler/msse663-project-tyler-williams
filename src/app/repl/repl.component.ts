@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-repl',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./repl.component.scss']
 })
 export class ReplComponent implements OnInit {
+  @Input() mode = '';
   result = '';
 
   constructor() { }
