@@ -11,6 +11,7 @@ import { ReplComponent } from './repl/repl.component';
 import { HomeComponent } from './home/home.component';
 import { CreateProgramComponent } from './create-program/create-program.component';
 import { EditProgramComponent } from './edit-program/edit-program.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { EditProgramComponent } from './edit-program/edit-program.component';
     ReplComponent,
     HomeComponent,
     CreateProgramComponent,
-    EditProgramComponent
+    EditProgramComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

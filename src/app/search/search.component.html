@@ -1,0 +1,5 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <label for="programId">Enter the ID of the program here</label>
+  <input type="text" id="programId" name="programId" formControlName="programId" />
+  <input type="submit" />
+</form>
