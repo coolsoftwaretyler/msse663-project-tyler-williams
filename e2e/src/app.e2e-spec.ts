@@ -1,16 +1,29 @@
-import { browser, logging } from 'protractor';
+import { browser, logging, ExpectedConditions } from 'protractor';
 import { AppPage } from './app.po';
 
-describe('workspace-project App', () => {
+describe('Lisp REPL App', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', async () => {
+  it('should be able to navigate to the create page', async () => {
     await page.navigateTo();
-    expect(await page.getTitleText()).toEqual('msse663-project-tyler-williams app is running!');
+    await page.clickCreateLink();
+
+    browser.wait(ExpectedConditions.urlContains('programs/new'), 5000).then(function(result) {
+        expect(result).toEqual(true);
+    });
+  });
+
+  it('should be able to navigate to the edit page', async () => {
+    await page.navigateTo();
+    await page.clickCreateLink();
+
+    browser.wait(ExpectedConditions.urlContains('programs/new'), 5000).then(function(result) {
+        expect(result).toEqual(true);
+    });
   });
 
   afterEach(async () => {

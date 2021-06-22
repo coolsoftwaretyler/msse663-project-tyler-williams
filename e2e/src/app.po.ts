@@ -5,7 +5,11 @@ export class AppPage {
     return browser.get(browser.baseUrl);
   }
 
-  async getTitleText(): Promise<string> {
-    return element(by.css('app-root .content span')).getText();
+  async clickCreateLink(): Promise<unknown> {
+    return element(by.css('[data-protractor="create"]')).click();
+  }
+
+  async clickEditLink(): Promise<unknown> {
+    return element(by.css('[data-protractor="edit"]')).click();
   }
 }
