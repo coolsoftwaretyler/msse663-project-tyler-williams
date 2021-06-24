@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import { TextEditorComponent } from './text-editor.component';
 
@@ -8,7 +10,8 @@ describe('TextEditorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TextEditorComponent ]
+      imports: [FormsModule, ReactiveFormsModule, HttpClientModule],
+      declarations: [TextEditorComponent ]
     })
     .compileComponents();
   });
