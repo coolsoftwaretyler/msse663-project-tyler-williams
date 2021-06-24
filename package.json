@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "backend": "node src/backend/server.js"
+    "backend": "node src/backend/server.js",
+    "start": "concurrently \"ng serve\" \"node src/backend/server.js\""
   },
   "private": true,
   "dependencies": {
@@ -20,7 +20,9 @@
     "@angular/platform-browser": "~11.2.12",
     "@angular/platform-browser-dynamic": "~11.2.12",
     "@angular/router": "~11.2.12",
+    "concurrently": "^6.2.0",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.12.14",
     "rxjs": "~6.6.0",
