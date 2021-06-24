@@ -1,5 +1,5 @@
-<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
-  <label for="programId">Enter the ID of the program here</label>
-  <input data-protractor="programId" type="text" id="programId" name="programId" formControlName="programId" />
-  <input data-protractor="searchSubmit" type="submit" />
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="p-4">
+  <label for="programId" class="text-white block mb-2">Enter the ID of the program</label>
+  <input data-protractor="programId" type="text" id="programId" name="programId" formControlName="programId" class="block mb-2 p-1 rounded w-full max-w-sm" />
+  <input data-protractor="searchSubmit" type="submit" class="px-2 py-1 rounded bg-purple-700 text-white" />
 </form>
