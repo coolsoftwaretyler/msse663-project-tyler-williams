@@ -1,4 +1,4 @@
-<div class="flex flex-wrap max-w-7xl mx-auto box-border p-8 gap-8">
-  <app-text-editor class="flex-1 min-h-screen w-full md:w-1/2" (newSourceEvent)="updateResult($event)" [mode]="mode"></app-text-editor>
-  <app-console class="bg-gray-500 min-h-screen w-full md:w-1/2" [result]="result"></app-console>
+<div class="flex flex-wrap max-w-7xl mx-auto box-border p-4 gap-8">
+  <app-text-editor class="flex-1 w-full md:w-1/2" (newSourceEvent)="updateResult($event)" [mode]="mode"></app-text-editor>
+  <app-console class="bg-gray-500 min-h-screen md:min-h-0 w-full md:w-1/2" [result]="result"></app-console>
 </div>
