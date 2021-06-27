@@ -77,7 +77,8 @@ export class TextEditorComponent implements OnInit {
     const newProgram = {
       sourceCode: input,
     }
-    const programId = '60cf9d84dd29ba3a30235570';
+    const currentUrlDelimited = window.location.href.split('/')
+    const programId = currentUrlDelimited[currentUrlDelimited.length - 1]
     this.programService.update(programId, newProgram)
     .subscribe(
       response => {
