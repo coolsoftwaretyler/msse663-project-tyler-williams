@@ -2,6 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 
+## Features
+
+This application allows users to: 
+
+1. Create a new Lisp program.
+1. Author, interpret, and save that Lisp program. 
+1. Search for an existing Lisp program by ID. 
+1. Edit existing Lisp programs, and save the updates.
+
 ## Setup
 
 1. Clone this repository.
